@@ -6,8 +6,9 @@ import androidx.lifecycle.viewModelScope
 import com.sonu.dagger2example.example.models.FakeApiResponseItem
 import com.sonu.dagger2example.example.repository.ProductRepository
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class MainViewModel(
+class MainViewModel @Inject constructor(
     private val repository: ProductRepository
 ) : ViewModel() {
     val productsLiveData: LiveData<List<FakeApiResponseItem>>
